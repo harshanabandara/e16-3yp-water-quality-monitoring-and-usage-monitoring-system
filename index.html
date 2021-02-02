@@ -359,13 +359,237 @@
                 <img src="./pages/assets/images/plot.png" alt="" class="img-responsive">
                 <h3 class="text-center">Hardware Testing and Simulation</h3>
                 <p>Hardware Components are simulated in Tinkercad. <a href="./pages/Testing.html">click here</a> to see more</p>
+
             </div>
-<!--             <div class="col-xs-12 col-md-4">
-                <img src="./assets/images/sample.png" alt="" class="img-responsive">
-                <h3 class="text-center">Sample text below</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet consectetur dolor. Phasellus ut
-                    lacus tellus. In pretium lobortis blandit.</p>
-            </div> -->
         </div>
+        <div class="col-xs-12 col-md-12 section-container-spacer">
+            <h2 class="text-center">Our Front End Implementation</h2>
+        </div>
+        <h3>Web Site</h3>
+                <p>Our web site UI is designed to give a user friendly experience to the customer in a very simple manner.
+                   It uses dynamic web pages to interact with users therefore fast responses can be obtained with less data 
+                   usage.   
+                    </p>
+        <h3>Role Based Access</h3>
+        <p>This offers different user expirience to the user depending on the role of a user.<br>
+           3 roles in our system are, <br> 
+           <ol>
+            <li>Super Admin - Give access to Admin Users</li>
+            <li>Admin - Supervise Users (Customers)</li>
+            <li>User - Customers</li>
+          </ol>    
+             </p>
+        
+        <h2>Web Site Views</h2>
+        <h3>1. Customer UI</h3>
+
+        <div class="row">
+            <div class="col-xs-12 col-md-4">
+                <img src="./assets/images/cusomerUi/1.png" alt="" class="img-responsive">
+                <h3 class="text-center">Log In</h3>
+                </div>
+
+            <div class="col-xs-12 col-md-4">
+                <img src="./assets/images/cusomerUi/2.png" alt="" class="img-responsive">
+                <h3 class="text-center">Daily Usage</h3>
+                  </div>
+            
+            <div class="col-xs-12 col-md-4">
+                <img src="./assets/images/cusomerUi/3.png" alt="" class="img-responsive">
+                <h3 class="text-center">Monthly Usage</h3>
+                 </div>
+
+           
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-md-4">
+                <img src="./assets/images/cusomerUi/4.png" alt="" class="img-responsive">
+                <h3 class="text-center">Sign Up</h3>
+                 </div>
+
+            <div class="col-xs-12 col-md-4">
+                <img src="./assets/images/cusomerUi/5.png" alt="" class="img-responsive">
+                <h3 class="text-center">Getting User Details</h3>
+                 </div>
+        </div>
+
+        <h3>2. Admin UI</h3>
+
+        <div class="row">
+            <div class="col-xs-12 col-md-4">
+                <img src="./assets/images/adminUi/1.png" alt="" class="img-responsive">
+                <h3 class="text-center">Admin View</h3>
+                </div>
+
+            <div class="col-xs-12 col-md-4">
+                <img src="./assets/images/adminUi/2.png" alt="" class="img-responsive">
+                <h3 class="text-center">Delete a User</h3>
+                  </div>
+            
+            <div class="col-xs-12 col-md-4">
+                <img src="./assets/images/adminUi/3.png" alt="" class="img-responsive">
+                <h3 class="text-center">Update a User</h3>
+                 </div>
+
+           
+        </div>
+
+
+        <h3>3. Super Admin UI</h3>
+
+        <div class="row">
+            <div class="col-xs-12 col-md-4">
+                <img src="./assets/images/SadminUi/1.png" alt="" class="img-responsive">
+                <h3 class="text-center">Admin View</h3>
+                </div>
+
+            <div class="col-xs-12 col-md-4">
+                <img src="./assets/images/SadminUi/2.png" alt="" class="img-responsive">
+                <h3 class="text-center">Create Administrative User</h3>
+                  </div>
+            
+            <div class="col-xs-12 col-md-4">
+                <img src="./assets/images/SadminUi/3.png" alt="" class="img-responsive">
+                <h3 class="text-center">Delete an Admin</h3>
+                 </div>
+
+           
+        </div>
+
+        <br>
+        <div class="col-xs-12 col-md-12 section-container-spacer">
+            <h2 class="text-center">Tests Conducted</h2>
+        </div>
+        <br>
+        <h2>1. Penetration Testing</h2>
+
+        <p>Several Penetration Tests were carried out in order to check vulnerabilities in our backend
+            system. Tools used on those tests are <br>
+            <ul>
+                <li>Wire Shark</li>
+                <li>BURP Suite</li>
+                <li>Dirb</li>
+                <li>Nmap</li>
+                <li>Sqlmap</li>
+                <li>Nilto</li>
+              </ul>  
+
+        <h3>Results</h3>
+        
+            <ul>
+                <li>Using wire shark we conducted packet sniffing tests. As a result of that we observed information exposed in requests.</li>
+                <li>Using Dirb we tested using a brute force attack to check vulnerabilities in every directory/object of our website and server.
+                    We managed to identify exposed endpoints by the test.
+                </li>
+                <li>Using BURP Suite and Sql map we tried to conduct a sql injection attack but attack was failed due to security measures in our
+                    server.
+                </li>
+                <li>Using nmap and nikto we tried to obtain information about the web server and it's components. We managed to get server type, OS,<br> 
+                    open ports, vulnerabilities in our content policies, server capabilities. These information could be used for DOS, DDOS, sql injections <br>
+                </li>
+              </ul> 
+
+
+              <div class="row">
+                <div class="col-xs-12 col-md-4">
+                    <img src="./assets/images/Tests/penTest/1.png" alt="" class="img-responsive">
+                    <h3 class="text-center">Packet Sniffing</h3>
+                    </div>
+    
+                <div class="col-xs-12 col-md-4">
+                    <img src="./assets/images/Tests/penTest/2.png" alt="" class="img-responsive">
+                    <h3 class="text-center">End Point Responses</h3>
+                      </div>
+                
+                <div class="col-xs-12 col-md-4">
+                    <img src="./assets/images/Tests/penTest/3.png" alt="" class="img-responsive">
+                    <h3 class="text-center">Security Headers</h3>
+                     </div>
+    
+               
+            </div>
+
+
+            <div class="row">
+                <div class="col-xs-12 col-md-4">
+                    <img src="./assets/images/Tests/penTest/4.png" alt="" class="img-responsive">
+                    <h3 class="text-center">OS information</h3>
+                    </div>
+    
+                <div class="col-xs-12 col-md-4">
+                    <img src="./assets/images/Tests/penTest/5.png" alt="" class="img-responsive">
+                    <h3 class="text-center">Security Headers</h3>
+                      </div>
+                
+               
+    
+               
+            </div>
+        
+              <h4>We implemented our security measures using these results.</h4>
+        
+
+        </p>
+
+        <br>
+        <div class="col-xs-12 col-md-12 section-container-spacer">
+            <h2 class="text-center">Security Aspects</h2>
+        </div>
+        
+            <ul>
+                <li>https server</li>
+                    <p>Using self signed certificates using open ssl for devolepment purposes. This protects sensitive <br>
+                    information by encrypting, thus protects from outsiders.</p>
+
+                <li>Using Credentials to Authenticate Users</li>
+                <p>
+                    Users are authenticated by using passwords. These passwords are hashed therefore even the database is <br>
+                    compromised, passwords are safe therefore attacker cant use it.
+                </p>
+                <li>Using cookies for Track Sessions</li>
+                <p>
+                    For successfull authentication of a user, user will be issued a jwt tocken. Using that token user will be <br>
+                    authenticated. Since tocken is sent via https it is secured. Also secure tag and httponly tags are set therefore <br>
+                    no one can manipulate the tockens from browsers and use undetected.
+                </p>
+                <li>Role Based Authorization</li>
+                <p>
+                    Server uses middleware to authorise users in server. Therefore each user will be limited to actions pre defined <br>
+                    for his corresponding role.
+                </p>
+                <li>Setting Rate Limits Per User</li>
+                <p>
+                    By setting x rate headers, number of requests from a user are monitored and limited. If rate is overflowed 429 status <br>
+                    is returned. Thus protecting from dos attacks. 
+                </p>
+                <li>Request burst tracking</li>
+                <p>
+                    Server tracks number of requests received in a given time. If the number of requests go pass that number, server will <br>
+                    take predefined necessary actions. This gives protection from ddos attacks.
+                </p>
+                <li>Request burst tracking</li>
+                <p>
+                    Server tracks number of requests received in a given time. If the number of requests go pass that number, server will <br>
+                    take predefined necessary actions. This gives protection from ddos attacks.
+                </p>
+                <li>Hiding Server Information</li>
+                <p>
+                    By hiding server type, OS, database information and capabilities server has protection from attacks sepecially designed <br>
+                    for our server. Also using content policies we can have protection from sql injection attacks.
+                </p>
+
+
+              </ul> 
+
+
+
+       
+        
+
+        <br>
+    
+
+
     </div>
 </div>
