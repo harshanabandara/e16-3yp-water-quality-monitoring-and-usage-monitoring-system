@@ -401,7 +401,57 @@
             <li>Super Admin - Give access to Admin Users</li>
             <li>Admin - Supervise Users (Customers)</li>
             <li>User - Customers</li>
-          </ol>    
+          </ol>  
+      <h3>Implementation</h3>
+
+          <ul>
+            <li>
+            <p>Uppon registration to the service, each user should confirm their account using their email account by clicking on a generated url 
+            </p>
+        	</li>
+
+        	<li>
+            <p>User actions are based on their roles and authorization middleware monitor and control those ations accordingly. <br>
+            	authorization middleware make sure, 
+            	<ol>
+            		<li>Verify / Idenify users and roles</li>
+		            <li>Users don't access unauthorized locations and perform unauthorized actions</li>
+		            <li>Redirect users on unauthorized locations and unauthorized actions</li>
+         		 </ol>
+            </p>
+        	</li>
+
+        	<li>
+            <p>Customers can login and monitor their devices. They can monitor,
+            	 <ol>
+		            <li>Daily Usage of water</li>
+		            <li>Monthly Water Usage reports</li>
+		            <li>Water Quality of their tanks</li>
+         		 </ol>
+
+            </p>
+        	</li>
+
+        	<li>
+            <p>Admins can monitor the system and manage customers, also they can provide customer support.<br>
+            	Their tasks include, 
+            	<ol>
+		            <li>Send notices to users</li>
+		            <li>Edit and remove customers</li>
+		            <li>Monitor devices with issues</li>
+         		 </ol>
+            </p>
+        	</li>
+
+        	<li>
+            <p>Super Admins can allow access to the admin users to the system and remove admins. 
+            </p>
+        	</li>
+
+
+
+           
+          </ul>
              </p>
         
         <h2>Web Site Views</h2>
