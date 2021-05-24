@@ -13,3 +13,16 @@ Future<String> getToken() async {
   String token = preftoken.getString("token");
   return token;
 }
+
+Future<bool> isLogged()async{
+  SharedPreferences isLoggedIn = await SharedPreferences.getInstance();
+  return isLoggedIn.getBool('isLogged');
+}
+
+Future<bool> setLogin(bool flag)async{
+  SharedPreferences isLoggedIn = await SharedPreferences.getInstance();
+  isLoggedIn.setBool('isLogged', flag);
+  // ignore: deprecated_member_use
+  return isLoggedIn.commit();
+}
+

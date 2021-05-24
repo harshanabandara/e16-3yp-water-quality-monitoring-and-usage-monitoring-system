@@ -8,9 +8,7 @@ import 'package:flutter/material.dart';
 class Tank extends StatelessWidget{
 
   final List<TankModel> tanks;
-
   Tank(this.tanks);
-
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -23,9 +21,9 @@ class Tank extends StatelessWidget{
             shrinkWrap: true,
         crossAxisCount: 2,
         children: [
-          tankView(0,tanks[0].level, tanks[0].issue,context),
-          tankView(1,tanks[1].level, tanks[1].issue,context),
-          tankView(2,tanks[2].level, tanks[2].issue,context),
+          tankView(0,tanks[0].level, !tanks[0].issue,context),
+          tankView(1,tanks[1].level, !tanks[1].issue,context),
+          tankView(2,tanks[2].level, !tanks[2].issue,context),
           
 
         ],
@@ -50,7 +48,7 @@ class Tank extends StatelessWidget{
           context: context,
           builder: (ctx) =>AlertDialog(
             title: Text("Tank ${tanks[index].no}"),
-            content: Text("TDS count: ${tanks[index].tds} \n Turbiudity : ${tanks[index].turbiudity}"),
+            content: Text("TDS count: ${tanks[index].tds} \n Turbiudity : ${tanks[index].turbiudity}\nWater Level : ${tanks[index].level/10}%"),
             actions: [
               FlatButton(onPressed:(){ Navigator.of(ctx).pop();}, child: Text("Ok!"))
             ],
@@ -63,8 +61,9 @@ class Tank extends StatelessWidget{
     
   }
 
-  String imageByLevel(int waterlevel,bool ok){
+  String imageByLevel(int waterlevelInt,bool ok){
     String image = "";
+    var waterlevel = waterlevelInt/10;
     if(waterlevel > 80 && ok)
       image = "assets/tank_full_ok-01.png";
     else if(waterlevel > 80 && !ok)
@@ -86,6 +85,7 @@ class Tank extends StatelessWidget{
 
     return image;  
   }
+
 
   
 

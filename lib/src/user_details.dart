@@ -1,15 +1,3 @@
-import 'dart:convert';
-
-// class User{
-//   String email;
-//   String password;
-//   User();
-//   User.withDetails(String email,String password){
-//     this.email = email;
-//     this.password = password;
-//   }
-// }
-
 class UserLogin extends User{
 
 }

@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'dart:io';
 
+import 'package:co227/src/cookieHolder.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
@@ -8,6 +8,7 @@ import '../src/user_details.dart';
 import 'package:http/http.dart';
 import '../src/token.dart';
 
+bool check = false;
 class LoginScreen extends StatefulWidget{
   
   
@@ -18,7 +19,7 @@ class LoginScreen extends StatefulWidget{
 
 class LoginState extends State<LoginScreen>{
   final postURL = "http://192.168.8.198:3000/login";
-  
+  final tanksURL = "http://192.168.8.198:3000/tanks";
   final _scaffoldKey = new GlobalKey<ScaffoldState>();
   final _formkey = new GlobalKey<FormState>();
   String email = "";
@@ -132,7 +133,7 @@ class LoginState extends State<LoginScreen>{
       elevation: 5.0,
 
       onPressed: loginButtonFunction,
-      child: Text('Login'),
+      child: check?Text('Connecting'):Text('Login'),
 
       );
   } //Button
@@ -146,8 +147,8 @@ class LoginState extends State<LoginScreen>{
               height: 100.00,
               decoration: BoxDecoration(
                 image : DecorationImage(
-                  scale: 3.0,
-                  image: AssetImage("assets/appTitle.png") 
+                  scale: 1.5,
+                  image: AssetImage("assets/aquaWatcher.png") 
                   //Image.asset('assets/checked.png',scale: 1)
                    )
               ), 
@@ -156,8 +157,10 @@ class LoginState extends State<LoginScreen>{
   }
 
 void loginButtonFunction(){
-  if(_formkey.currentState.validate())
+  if(_formkey.currentState.validate()){
+    check=true;
     approve();
+  }
   
   //Navigator.pushNamed(context, '/home');
   
@@ -176,23 +179,40 @@ void approve() async{
     _formkey.currentState.save();
     String json = '{"email":"$email","password":"$password"}';
     print(json);
+
+    
     final serverResponse = await post(postURL,body :json,headers:headers);
-    print(serverResponse.body);
+    // print(serverResponse.body);
     int statusCode = serverResponse.statusCode;
     print(statusCode);
-    print(serverResponse.headers['set-cookie']);
+    // print(serverResponse.headers['set-cookie']);
 
     var resBody = serverResponse.body;
     var response = jsonDecode(resBody);
     res = LoginResponse.fromJson(response);
+    
     /**
      * if error code == 400 
      * show error message 
      * reset text fields
      */
+    
+    
     if(statusCode == 200){
-      savedToken(serverResponse.headers['set-cookie']);
-      print(serverResponse.headers['set-cookie']);
+      var cookie = serverResponse.headers['set-cookie'];
+      var cookie1 = (cookie.split(";")[0]);
+      // print(cookie);
+
+      // savedToken(cookie1);
+       CookieHolder.updateCookie(cookie1);
+      // Map <String,String> cookieHeader =  { 
+      //   "Cookie" : CookieHolder.getCookie()
+
+      // };
+      
+
+      savedToken(cookie1);
+
       Navigator.pushReplacement(
     context,
     MaterialPageRoute(
@@ -205,6 +225,7 @@ void approve() async{
   }catch(e){
     
     print(e);
+    
   }
 }
 }
